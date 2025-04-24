@@ -16,6 +16,6 @@ Results are printed to stout.
 Found 126 vulnerabilities of type XSS
 True Positives: 126
 False Positives: 0
-Total: 455
-Score: 27.69
+Total: 246
+Score: 51.22
 ```

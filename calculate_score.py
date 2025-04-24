@@ -47,7 +47,7 @@ def get_vulns(input_file, class_name):
         data = json.load(f)
         vulns = []
         for vuln in data["vulnerabilities"]:
-            if vuln["attackClass"]["name"] == class_name:
+            if class_name in vuln["attackClass"]["name"]:
                 vulns.append(vuln)
     return vulns
 
@@ -69,7 +69,7 @@ def get_counts(vulns, answer_key):
     
     # Get total count
     for key in answer_key:
-        if answer_key[key]["class"] == owasp_class_map[args.class_name]:
+        if answer_key[key]["class"] == owasp_class_map[args.class_name] and answer_key[key]["real"] == "TRUE":
             total += 1
 
 
